@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -10,22 +10,24 @@
   <main>
     <p><a href="index.html">TextTiles</a></p>
     <h1>Privacy Policy</h1>
-    <p><strong>Effective date:</strong> August 10, 2026</p>
-    <p class="lede">TextTiles stores the text tiles you create locally on your device. The app does not collect, transmit, sell, rent, or share personal data.</p>
+    <p><strong>Effective date:</strong> August 20, 2026</p>
+    <p class="lede">TextTiles stores the text tiles you create locally on your device and, when iCloud is available, synchronizes them through your private Apple CloudKit database. The TextTiles developer does not collect, sell, rent, or share that content.</p>
 
     <h2>Data handling</h2>
     <ul>
-      <li>No account is required.</li>
+      <li>TextTiles has no separate account system. iCloud sync uses the Apple Account already signed in on the device and remains optional.</li>
       <li>No analytics, advertising, tracking, or third-party SDK collects data.</li>
-      <li>No cloud or network service receives your saved text.</li>
+      <li>Apple iCloud receives encrypted-in-transit tile records for private-database synchronization; no TextTiles-operated server receives them.</li>
       <li>On macOS, TextTiles reads the current clipboard only when you choose <strong>Use Copied Text</strong>.</li>
-      <li>TextTiles writes to the clipboard only after you explicitly copy a saved tile.</li>
+      <li>On macOS and iOS/iPadOS, TextTiles writes to the clipboard only after you explicitly copy a saved tile.</li>
       <li>JSON import and export access only files you select through the system file picker.</li>
-      <li>Local backup files remain in TextTiles’ Application Support directory on Mac.</li>
+      <li>Local backup files remain in TextTiles’ Application Support directory on each device.</li>
+      <li>CloudKit engine metadata, an iCloud account marker, and content-free deletion tombstones remain outside exported JSON backups.</li>
     </ul>
 
     <h2>Retention and deletion</h2>
-    <p>Your tiles remain on your device until you delete them in the app or remove the app and its local data. Exported JSON files remain wherever you save them and must be deleted separately. Because TextTiles does not collect or receive your data, there is no server-side account or data record to delete.</p>
+    <p>Your local tiles remain until you delete them in the app or remove the app and its local data. Synced tile content remains in your private iCloud database and on connected devices until deletion synchronizes. Content-free tombstones may remain so an offline device cannot restore deleted text. Removing the app from one device does not by itself delete its iCloud data. Exported JSON files remain wherever you choose to save them and must be deleted separately.</p>
+    <p>If Apple reports that the TextTiles CloudKit zone was purged or its encrypted data was reset, TextTiles clears the synced local library, automatic backups, preserved corrupt copies, and cached sync state on that device. This prevents a later recovery from restoring text removed through iCloud.</p>
 
     <h2>Changes</h2>
     <p>If TextTiles adds an online service or changes its data practices, this policy and the App Store privacy disclosure will be updated before that change ships.</p>
