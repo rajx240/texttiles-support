@@ -10,7 +10,7 @@
   <main>
     <p><a href="index.html">TextTiles</a></p>
     <h1>Privacy Policy</h1>
-    <p><strong>Effective date:</strong> August 23, 2026</p>
+    <p><strong>Effective date:</strong> September 22, 2026</p>
     <p class="lede">TextTiles stores the text tiles you create locally on your device and, when iCloud is available, synchronizes them through your private Apple CloudKit database. The TextTiles developer does not collect, sell, rent, or share that content.</p>
 
     <h2>Data handling</h2>
@@ -25,9 +25,14 @@
       <li>CloudKit engine metadata, an iCloud account marker, and content-free deletion tombstones remain outside exported JSON backups.</li>
     </ul>
 
+    <h2>TextTiles keyboard on iPhone and iPad</h2>
+    <p>The optional keyboard works without Full Access. The main app writes a local copy of included tiles and appearance preferences to a shared App Group container. The keyboard reads this copy to display and insert your saved text; it does not perform iCloud sync or send typed text over the network. Open TextTiles to receive synced changes, then reopen the keyboard to refresh its local view.</p>
+    <p>All tiles are included by default. Choose which tiles appear under <strong>Library &amp; Settings → TextTiles Keyboard → Keyboard Tiles</strong>. Excluding a tile removes it from this device's keyboard without deleting it from the library. Hiding a preview conceals the tile body on screen; tapping the tile still inserts its complete text into the active app.</p>
+    <p>The keyboard transiently reads surrounding text supplied by iOS to provide capitalization and double-space punctuation. This context is not logged, saved, or transmitted by TextTiles. Tap timing is used locally to recognize double-space and Shift gestures. Text you deliberately insert is handled by the destination app under that app's own privacy practices.</p>
+
     <h2>Retention and deletion</h2>
     <p>Your local tiles remain until you delete them in the app or remove the app and its local data. Synced tile content remains in your private iCloud database and on connected devices until deletion synchronizes. Content-free tombstones may remain so an offline device cannot restore deleted text. Removing the app from one device does not by itself delete its iCloud data. Exported JSON files remain wherever you choose to save them and must be deleted separately.</p>
-    <p>To delete the complete synced library, open <strong>Settings → iCloud Sync → Delete Synced Library</strong> on Mac, or open <strong>Library &amp; Settings → Data Management</strong> and choose <strong>Delete Library Everywhere</strong> on iPhone or iPad. After you confirm <strong>Delete Everywhere</strong>, TextTiles deletes its private CloudKit zone, the local library, automatic backups, preserved corrupt copies, and content-bearing sync state. Other synced devices clear their local copies when they reconnect. A content-free deletion generation, the associated Apple Account record identifier, and its timestamp remain locally and in the private CloudKit database so offline devices cannot restore deleted text. This action cannot delete JSON files you previously exported outside TextTiles. If local or iCloud cleanup is temporarily unavailable after deletion commits, TextTiles keeps uploads blocked and retries the remaining cleanup automatically.</p>
+    <p>To delete the complete synced library, open <strong>Settings → iCloud Sync → Delete Synced Library</strong> on Mac, or open <strong>Library &amp; Settings → Data Management → Delete Library Everywhere</strong> on iPhone or iPad. After you confirm <strong>Delete Everywhere</strong>, TextTiles deletes its private CloudKit zone, the local library, automatic backups, preserved corrupt copies, and content-bearing sync state. Other synced devices clear their local copies when they reconnect. A content-free deletion generation, the associated Apple Account record identifier, and its timestamp remain locally and in the private CloudKit database so offline devices cannot restore deleted text. This action cannot delete JSON files you previously exported outside TextTiles. If local or iCloud cleanup is temporarily unavailable after deletion commits, TextTiles keeps uploads blocked and retries the remaining cleanup automatically.</p>
     <p>If Apple reports that the TextTiles CloudKit zone was purged or its encrypted data was reset, TextTiles clears the synced local library, automatic backups, preserved corrupt copies, and cached sync state on that device. This prevents a later recovery from restoring text removed through iCloud.</p>
 
     <h2>Changes</h2>
